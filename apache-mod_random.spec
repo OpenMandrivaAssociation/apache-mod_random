@@ -38,6 +38,8 @@ or banner ads.
 
 %setup -q -n %{mod_name}-%{version}
 
+cp %{SOURCE1} %{mod_conf}
+
 # strip away annoying ^M
 find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
@@ -53,7 +55,7 @@ install -d %{buildroot}%{_libdir}/apache-extramodules
 install -d %{buildroot}%{_sysconfdir}/httpd/modules.d
 
 install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache-extramodules/
-bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
+install -m0644 %{mod_conf} %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
 
 %post
 if [ -f %{_var}/lock/subsys/httpd ]; then
