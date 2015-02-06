@@ -6,7 +6,7 @@
 Summary:	DSO module for the apache web server
 Name:		apache-%{mod_name}
 Version:	2.1
-Release:	11
+Release:	12
 Group:		System/Servers
 License:	BSD
 URL:		http://www.tangent.org/
