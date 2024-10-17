@@ -9,7 +9,7 @@ Version:	2.1
 Release:	12
 Group:		System/Servers
 License:	BSD
-URL:		http://www.tangent.org/
+URL:		https://www.tangent.org/
 Source0: 	http://download.tangent.org/%{mod_name}-%{version}.tar.gz
 Source1:	%{mod_conf}
 Requires(pre): rpm-helper
